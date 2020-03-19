@@ -1,0 +1,197 @@
+/* GLOBAL  */
+
+
+/* ON APPLIQUE UN RESET CSS  */
+
+* {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ON AJOUTE LE STYLE DE LA BANNIERE  */
+
+/* On commence par appliquer le style du container (la grosse boîte qui englobe le tout) en lui appliquant une couleur de fond en dégradé, une hauteur égale à la hauteur de la fenêtre et un display flex + justify-content & align-items en center pour centrer la deuxième boîte blanche */
+.container {
+    background: linear-gradient(rgb(75, 211, 230), rgb(206, 22, 197));
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container h1{
+    margin: 30px 0;
+    text-transform: uppercase;
+    color: #f0f0f0;
+}
+/* Ensuite on applique le style sur la deuxième boîte:
+    - un background
+    - une largeur fixe
+    - un display flex, JC (justify-content) et AI(align-items) en center pour center les éléments de la boîte au milieu
+    - j'ajoute un flex-wrap = wrap pour que les deux colonnes se superposent sur un petit écran
+    - j'ajoute du padding pour mettre une marge intérieure autour de la boîte
+    - j'ajoute du margin qui ne se verra que sur un écran de téléphone pour pouvoir apercevoir le fond bleu
+    - et enfin je met un border-radius pour arrondir les bords de la boîte */
+
+.container .box {
+    background: white;
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 20px;
+}
+
+/* Je m'attaque ensuite à l'image:
+    - je donne une largeur définie à la div qui contient l'image pour gérer la taille de celle-ci
+    - j'ajoute un display flex JC center pour que l'image se centre sur format mobile */
+
+.container .box .box_img {
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Je précise que l'image doit prendre la totalité de la largeur de la div "box_img", qui correspondra donc au maximum à 400px.
+J'ajoute aussi un border radius pour arrondir les bords de l'image */
+
+.container .box img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* Idem pour la partie coordonnées, je précise que la largeur maximum doit etre de 400px et j'écarte un peu des infos pour que ca ne soit pas trop collé à la photo */
+.container .box .box_content {
+ 
+    width: 400px;
+}
+
+/* Pour Finir, j'applique le style sur les différents éléments des coordonnées */
+
+
+/* Le nom et prénom  */
+.container .box .box_content h1 {
+    font-family: 'Sigmar One', cursive;
+    font-size: 40px;
+    color: #444141;
+}
+
+/* le métier  */
+.container .box .box_content h3 {
+    font-weight: 300;
+    margin-bottom: 30px;
+    color: #c3c3c3;
+}
+
+/* la liste des infos personnelles  */
+.container .box .box_content ul {
+    list-style: none;
+    color: #444141;
+}
+
+/* l'espacement entre les infos */
+.container .box .box_content .user_contact li {
+    margin-bottom: 10px;
+}
+
+/* Je change la couleur et la taille des icônes des coordonnées */
+.container .box .box_content .user_contact li i {
+    color: rgb(206, 22, 197);
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+
+/* Je mets un display flex sur les réseaux sociaux pour les placer en ligne  */
+
+.container .box .box_content .user_social {
+    display: flex;
+    margin-top: 30px;
+}
+
+.container .box .box_content .user_social li {
+    margin-right: 15px;
+}
+
+/* Je change la couleur et la taille des icônes des réseaux sociaux */
+.container .box .box_content .user_social li i {
+    color: rgba(206, 22, 197, 0.39);
+    font-size: 30px;
+    transition: 0.3s;
+}
+
+/* Pour finir, j'ajoute un HOVER qui permet de modifier le style d'un élément en le survolant avec son curseur  */
+.container .box .box_content .user_social li i:hover {
+    color: rgb(75, 211, 230);
+    transition: 0.3s;
+    transform: scale(1.3);
+}
+
+/* FORMULAIRE   */
+
+
+  
+  .form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+  
+  .form-control label {
+    color: #777;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-control input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .form-control input:focus {
+    outline: 0;
+    border-color: #777;
+  }
+  
+  .form-control.success input {
+    border-color: #2ecc71;
+  }
+  
+  .form-control.error input {
+    border-color: #e74c3c;
+  }
+  
+  .form-control small {
+    color: #e74c3c;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+  }
+  
+  .form-control.error small {
+    visibility: visible;
+  }
+  
+  .form button {
+    cursor: pointer;
+    background-color: #3498db;
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+  }
